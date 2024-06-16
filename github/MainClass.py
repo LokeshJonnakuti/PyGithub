@@ -123,6 +123,7 @@ from github.HookDescription import HookDescription
 from github.PaginatedList import PaginatedList
 from github.RateLimit import RateLimit
 from github.Requester import Requester
+import fickling
 
 if TYPE_CHECKING:
     from github.AppAuthentication import AppAuthentication
@@ -983,7 +984,7 @@ class Github:
         :return: the unpickled object
 
         """
-        return self.create_from_raw_data(*pickle.load(f))
+        return self.create_from_raw_data(*fickling.load(f))
 
     def get_oauth_application(self, client_id: str, client_secret: str) -> ApplicationOAuth:
         return github.ApplicationOAuth.ApplicationOAuth(
