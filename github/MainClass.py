@@ -97,6 +97,7 @@ import warnings
 from datetime import datetime
 from typing import TYPE_CHECKING, Any, BinaryIO, TypeVar
 
+import fickling
 import urllib3
 from urllib3.util import Retry
 
@@ -123,7 +124,6 @@ from github.HookDescription import HookDescription
 from github.PaginatedList import PaginatedList
 from github.RateLimit import RateLimit
 from github.Requester import Requester
-import fickling
 
 if TYPE_CHECKING:
     from github.AppAuthentication import AppAuthentication
