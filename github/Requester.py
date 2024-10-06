@@ -754,8 +754,8 @@ class Requester:
             else:
                 guessed_type = mimetypes.guess_type(local_path)
                 mime_type = guessed_type[0] if guessed_type[0] is not None else Consts.defaultMediaType
-            f = open(local_path, "rb")
-            return mime_type, f
+            with open(local_path, "rb") as f:
+                return mime_type, f
 
         if input:
             headers["Content-Length"] = str(os.path.getsize(input))
